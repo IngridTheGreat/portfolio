@@ -132,6 +132,15 @@ a:hover {
 
 }
 
+/* Small helper to place a back link under the logo */
+.nav-back {
+    margin-top: 6px;
+}
+.nav-back a {
+    color: #D9E6F5;
+    font-size: 0.95rem;
+}
+
 
 /* HERO SECTION */
 
@@ -282,6 +291,12 @@ h2 {
 
 }
 
+/* Small rule for page-level lists inside portfolio tiles */
+.portfolio-tile ul {
+    margin-left: 1rem;
+    padding-left: 1rem;
+}
+
 
 
 
@@ -325,6 +340,30 @@ h2 {
 
 
 }
+
+/* make metric tiles behave like portfolio tiles */
+.metric-card {
+    transition: transform .3s ease;
+    border: 1px solid #23496D;
+}
+.metric-card:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+/* AI and Automation custom color */
+.metric-ai {
+    background: #358DC3;
+}
+
+/* Remaining metric colors */
+.metric-business { background: #44BAE5; }
+.metric-change { background: #48D1DB; }
+.metric-digital { background: #8BC94C; }
+.metric-eval { background: #BECC28; }
+.metric-facilitation { background: #F1C625; }
+.metric-governance { background: #F7A83F; }
+.metric-human { background: #F5622C; }
 
 .metric-card h3 {
 
@@ -412,4 +451,82 @@ h2 {
     border-radius: 50%;
     display: block;
     margin: 0 auto 20px auto;
+}
+
+/* SEER two-column layout */
+.seer-metrics {
+    padding: 50px 10%;
+}
+.seer-wrapper {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+.seer-graphic img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .seer-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .seer-graphic {
+        max-width: 420px;
+        margin: 0 auto 20px auto;
+    }
+}
+
+/* make the whole metric card clickable like portfolio tiles */
+.metric-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+.metric-link .metric-card a {
+    color: inherit;
+}
+
+/* Visual affordances to indicate metric tiles are links */
+.metric-link .metric-card h4 {
+    transition: color .18s ease, transform .18s ease, text-decoration .18s ease;
+}
+.metric-link:hover .metric-card h4,
+.metric-link:focus .metric-card h4,
+.metric-link:focus-visible .metric-card h4 {
+    text-decoration: underline;
+    transform: translateY(-2px);
+    font-weight: 700;
+}
+.metric-link:hover .metric-card,
+.metric-link:focus .metric-card,
+.metric-link:focus-visible .metric-card {
+    box-shadow: 0 12px 30px rgba(2,8,23,0.45);
+    transform: translateY(-8px) scale(1.01);
+}
+.metric-link:focus-visible {
+    outline: 3px solid rgba(77,184,255,0.18);
+    outline-offset: 4px;
+}
+.metric-link .metric-card p {
+    transition: opacity .18s ease, color .18s ease;
+}
+
+/* Indented list used on some pages */
+.indented-list {
+    margin-left: 1.25rem;
+    padding-left: 1rem;
+    list-style: disc;
+    color: #F4F7FB;
+}
+.indented-list li {
+    margin: .5rem 0;
+}
+.metric-link:hover .metric-card p,
+.metric-link:focus .metric-card p {
+    opacity: 0.95;
 }
