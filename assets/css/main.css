@@ -204,6 +204,75 @@ a:hover {
 
 }
 
+.frameworks-overview-copy {
+    font-size: 1.25rem;
+    color: #D9E6F5;
+    text-align: left;
+}
+
+.frameworks-custom-list {
+    margin: 0.35rem 0 0.5rem 0;
+    padding-left: 1.25rem;
+    text-align: left;
+}
+
+.frameworks-custom-list li {
+    margin-bottom: 0.2rem;
+    line-height: 1.4;
+    text-align: left;
+}
+
+.hero-subtitle a {
+    color: #4DB8FF;
+    text-decoration: none;
+    transition: color 0.2s ease, text-decoration 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.hero-subtitle a:hover,
+.hero-subtitle a:focus-visible {
+    color: #FFFFFF;
+    text-decoration: underline;
+    transform: translateY(-1px);
+}
+
+.contact-photo-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contact-photo-tile img,
+.podcast-tile img,
+.email-tile img,
+.linkedin-tile img,
+.resume-tile img,
+.legacy-tile img {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: 120px;
+    object-fit: cover;
+    margin: 0 auto 16px;
+    border-radius: 12px;
+    border: 2px solid #23496D;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.contact-photo-tile img {
+    max-width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.tile-container.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 
 /* SECTION SETTINGS */
 
@@ -243,6 +312,28 @@ h2 {
     gap:
     30px;
 
+}
+
+.frameworks-methodologies-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.seer-model-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1100px) {
+    .frameworks-methodologies-grid,
+    .seer-model-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .frameworks-methodologies-grid,
+    .seer-model-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 
