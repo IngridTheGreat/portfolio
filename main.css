@@ -147,7 +147,7 @@ a:hover {
 .hero {
 
     min-height:
-    70vh;
+    32vh;
 
     display:
     flex;
@@ -162,7 +162,7 @@ a:hover {
     center;
 
     padding:
-    60px 10%;
+    28px 10%;
 
     background:
 

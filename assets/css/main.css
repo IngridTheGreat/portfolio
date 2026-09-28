@@ -391,13 +391,17 @@ h2 {
 
 .award-posts {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 30px;
+    width: 80%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 @media (max-width: 900px) {
     .award-posts {
         grid-template-columns: 1fr;
+        width: 100%;
     }
 }
 
@@ -616,8 +620,7 @@ c-ai {
     12px 25px;
 
 
-    border-radius:
-    30px;
+    border-radius: 10px;
 
 
     background:
@@ -1240,8 +1243,7 @@ h2 {
     12px 25px;
 
 
-    border-radius:
-    30px;
+    border-radius: 10px;
 
 
     background:
