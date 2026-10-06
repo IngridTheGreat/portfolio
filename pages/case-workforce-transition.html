@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+    <title>WORKFORCE TRANSITION | AH™ Framework</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081B33;
+            color: #F4F7FB;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-back {
+            position: absolute;
+            top: 20px;
+            left: 5%;
+            display: inline-block;
+            color: #4DB8FF;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .portfolio-back:hover,
+        .portfolio-back:focus-visible {
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            position: relative;
+            background: #081B33;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           PRIMARY VISUAL
+           ========================================= */
+
+        .hero-visual {
+            margin: 45px auto 0;
+            max-width: 720px;
+            min-height: 0;
+
+            background: #e5e7eb;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            font-size: 1rem;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .hero-visual a {
+            display: block;
+            width: 100%;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+           ========================================= */
+
+        section {
+            padding: 28px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #F4F7FB;
+            margin-bottom: 14px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CHALLENGE
+           ========================================= */
+
+        .challenge {
+            background: #081B33;
+        }
+
+        .challenge-content {
+            max-width: 900px;
+        }
+
+        .challenge-content p {
+            font-size: 1.08rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           AH GRID
+           ========================================= */
+
+        .ah-section {
+            background: #081B33;
+        }
+
+        .ah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ah-card.a { grid-row: 1; grid-column: 1; background: #358DC3; }
+        .ah-card.b { grid-row: 1; grid-column: 2; background: #44BAE5; }
+        .ah-card.c { grid-row: 1; grid-column: 3; background: #48D1DB; }
+        .ah-card.d { grid-row: 2; grid-column: 1; background: #8BC94C; }
+        .ah-card.e { grid-row: 2; grid-column: 3; background: #BECC28; }
+        .ah-card.f { grid-row: 3; grid-column: 1; background: #F1C625; }
+        .ah-card.g { grid-row: 3; grid-column: 2; background: #F7A83F; }
+        .ah-card.h { grid-row: 3; grid-column: 3; background: #F5622C; }
+
+        .ah-visual-card {
+            grid-row: 2;
+            grid-column: 2;
+            align-self: center;
+            justify-self: center;
+            width: 100%;
+            max-width: 220px;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ah-visual-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+
+        .ah-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ah-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .ah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .deliverables-layout,
+        .outcome-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 360px);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .deliverables-list,
+        .outcome-list {
+            color: #ffffff;
+        }
+
+        .deliverables-image,
+        .outcome-image {
+            margin: 0;
+            text-align: center;
+        }
+
+        .deliverables-image a {
+            display: block;
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        .deliverables-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 6px;
+        }
+
+        .deliverables-image figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #4DB8FF;
+            line-height: 1.4;
+        }
+
+        .deliverables-image figcaption a {
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        .ah-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .ah-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ah-description {
+            color: #ffffff;
+            font-size: 0.97rem;
+        }
+
+        /* =========================================
+           AI OPPORTUNITIES
+           ========================================= */
+
+        .ai-section {
+            background: #081B33;
+        }
+
+        .opportunity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .opportunity {
+            padding: 22px;
+            background: #f7f8fa;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .opportunity h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .opportunity p {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           MEASUREMENT
+           ========================================= */
+
+        .measurement {
+            background: #081B33;
+        }
+
+        .measurement-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .measurement-box p {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           HUMAN JUDGMENT
+           ========================================= */
+
+        .human-judgment {
+            background: #081B33;
+        }
+
+        .human-box {
+            max-width: 900px;
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 14px;
+            border-left: 5px solid #374151;
+        }
+
+        .human-box p {
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           OUTCOME
+           ========================================= */
+
+        .outcome {
+            background: #081B33;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .outcome h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .outcome p {
+            max-width: 800px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            background: #081B33;
+            padding: 30px 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .ah-grid,
+            .opportunity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ah-card:nth-child(n) {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 45px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <a class="portfolio-back" href="../portfolio.html">Back to Portfolio</a>
+
+            
+            <h1>
+               Sears and Kmart – <br>Call Center Change Readiness and Adoption
+            </h1>
+
+            <p class="hero-description">
+                Change Readiness & Adoption | Learning & Development <br>Performance Improvement | Workforce Enablement
+            </p>
+
+
+            <!-- PRIMARY VISUAL
+                 Replace this placeholder with your image.
+                 Example:
+                 <img src="images/change-readiness.jpg"
+                      alt="Change readiness and adoption journey">
+            -->
+
+            <div class="hero-visual">
+                <a href="../images/sears-infographic.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Sears workforce transition infographic at full size">
+                    <img src="../images/sears-infographic.png" alt="Sears workforce transition infographic">
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         THE CHALLENGE
+         ========================================= -->
+
+    <section class="challenge">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                The Challenge
+            </h2>
+
+           
+                
+Sears and Kmart call centers were operating in a complex environment where changes to roles, systems, tools, workflows, and customer interactions directly affected employee performance and customer experience.<br><br>
+The organization needed to prepare employees for changing responsibilities while maintaining consistent policies, procedures, and service expectations across call center environments. Agents transitioning between inbound and outbound roles required targeted skill development, while new systems and tools required employees to understand not only how to use them, but why the change mattered to their day-to-day work.<br><br>
+The challenge extended beyond training. Leadership needed practical ways to identify skill gaps, improve adoption, reduce process friction, strengthen knowledge access, and build consistent change practices that could scale across call centers.<br>
+
+               
+
+      
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         AH APPROACH
+         ========================================= -->
+
+    <section class="ah-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AH™ Approach
+            </h2>
+
+           
+              
+                        AH™ is a sustainable transformation I created... to reflect my experience with strategizing the best approach... to streamline operations, optimize workflows, and align people, processes, and technology.<br><br> 
+      
+
+
+            <div class="ah-grid">
+
+
+                <!-- A -->
+
+                <div class="ah-card a">
+
+                    <img class="ah-icon" src="../images/icon-ai.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        A
+                    </div>
+
+                    <div class="ah-title">
+                        AI and Automation
+                    </div>
+
+                    <div class="ah-description">
+•	Applied digital tools to remove process friction while preserving human decision-making for customer interactions.<br>
+•	Evaluated opportunities to simplify repetitive information-seeking and status-check activities through technology-enabled self-service.<br>
+•	Identified opportunities to use automation and intelligent knowledge access to reduce dependence on manual support and improve the speed at which employees could locate answers.<br>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- B -->
+
+                <div class="ah-card b">
+
+                    <img class="ah-icon" src="../images/icon-business.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        B
+                    </div>
+
+                    <div class="ah-title">
+                        Business Transformation
+                    </div>
+
+                    <div class="ah-description">
+•	Cultivated trust and collaboration among National Training Managers, driving process improvements to scale across call centers.<br>
+•	Formulated a Leadership Influence framework centered on transparency and vulnerability to strengthen leadership capabilities.<br>
+•	Mapped a sales career pathway progressing talent from Marketing Coordinator to National Manager, creating greater visibility into career progression and leadership development.<br>
+                    </div>
+                </div>
+
+                <!-- C -->
+
+                <div class="ah-card c">
+
+                    <img class="ah-icon" src="../images/icon-change.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        C
+                    </div>
+
+                    <div class="ah-title">
+                        Change Management
+                    </div>
+
+                    <div class="ah-description">
+•	Assessed how changes would affect employees and incorporated those impacts into training and adoption activities.<br>
+•	Identified skill gaps and change-readiness needs for agents transitioning between inbound and outbound roles.<br>
+•	Led enterprise training and change-readiness strategy for Sears Commercial's SAP Center system to support user adoption.<br>
+
+                    </div>
+
+                </div>
+
+
+                <!-- D -->
+
+                <div class="ah-card d">
+
+                    <img class="ah-icon" src="../images/icon-digital.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        D
+                    </div>
+
+                    <div class="ah-title">
+                        Digital Solutions
+                    </div>
+
+                    <div class="ah-description">
+•	Connected digital resources to workflow so info could be accessed when needed.<br>
+•	Directed training strategy for Kmart Smart Plan national launch, introducing KSP ASAP tool to enable just-in-time status checks for less than 7% of call volume and reduce call-volume.<br>
+•	Established knowledge-management resources, searchable job aids, and self-service learning tools.<br>
+                    </div>
+                </div>
+
+                <figure class="ah-visual-card">
+                    <a href="../images/sears-logo.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Sears logo graphic at full size">
+                        <img src="../images/sears-logo.png" alt="Sears logo">
+                    </a>
+                </figure>
+
+                <!-- E -->
+
+                <div class="ah-card e">
+
+                    <img class="ah-icon" src="../images/icon-evaluation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        E
+                    </div>
+
+                    <div class="ah-title">
+                        Evaluation and Analytics
+                    </div>
+
+                    <div class="ah-description">
+•	Evaluated relationship between tools, workflow, employee behavior, and performance to identify opportunities for improvement.<br>
+•	Improved performance through short-term tool consolidation and a longer-term call-script workflow designed to reduce errors.<br>
+                    </div>
+                </div>
+
+
+                <!-- F -->
+
+                <div class="ah-card f">
+
+                    <img class="ah-icon" src="../images/icon-facilitation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        F
+                    </div>
+
+                    <div class="ah-title">
+                        Facilitation and Feedback
+                    </div>
+
+                    <div class="ah-description">
+•	Created opportunities for employees and leaders to surface concerns and test approaches during periods of change.<br>
+•	Developed 3-week training for retail staff, with gamified role-plays to reinforce adherence.<br>
+•	Facilitated focus groups to advance change-management best practices and provided stakeholders with recommendations.<br>
+                    </div>
+                </div>
+
+
+                <!-- G -->
+
+                <div class="ah-card g">
+
+                    <img class="ah-icon" src="../images/icon-governance.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        G
+                    </div>
+
+                    <div class="ah-title">
+                        Governance
+                    </div>
+
+                    <div class="ah-description">
+•	Incorporated policy and procedure requirements into classroom learning, role-play activities, job aids, and call-center workflows.<br>
+•	Used governance as a mechanism for maintaining consistency while allowing processes and learning solutions to evolve with business needs.<br>
+                    </div>
+                </div>
+
+                <!-- H -->
+
+                <div class="ah-card h">
+
+                    <img class="ah-icon" src="../images/icon-human.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        H
+                    </div>
+
+                    <div class="ah-title">
+                        Human Judgment
+                    </div>
+
+                    <div class="ah-description">
+•	Applied judgment to balance employee acceptance, operational requirements, technology capabilities, and business needs.<br>
+•	Negotiated tool adoption to support a smooth transition and long-term sustainability.<br>
+•	Used stakeholder input, employee behavior, and operational context to determine where additional intervention was needed.<br>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- =========================================
+         DELIVERABLES
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                Deliverables
+            </h2>
+
+            <div class="deliverables-layout">
+                <div class="deliverables-list">
+                    •	3-week classroom training program<br>
+                    •	Call-center change-management focus groups and call-script workflow<br>
+                    •	Gamified role-play activities<br>
+                    •	Kmart Smart Plan national launch training strategy and KSP ASAP tool training and adoption support<br>
+                    •	Leadership Influence framework<br>
+
+                    •	Sales career pathway from Marketing Coordinator to National Manager<br>
+                    •	Sears Commercial SAP Center training and adoption strategy<br>
+                    •	Stakeholder communications and updates<br>
+                    •	Standardized resources to reinforce policies and procedures for consistent compliance across teams <br>
+                </div>
+
+                <figure class="deliverables-image">
+                    <a href="../images/sears-game.png" target="_blank" rel="noopener noreferrer" aria-label="Open the interactive game-based training graphic at full size">
+                        <img src="../images/sears-game.png" alt="Interactive, game-based scenarios that let agents practice handling incoming calls">
+                    </a>
+                    <figcaption>
+                        <a href="../images/sears-game.png" target="_blank" rel="noopener noreferrer">Drove a smooth workforce transition <br>with engaging, multi-format training: 
+professional videos,<br> a scenario-based card game, and animations</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI-ENABLED OPPORTUNITIES
+         ========================================= -->
+
+    <section class="ai-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AI-Enabled Opportunities
+            </h2>
+
+
+•	AI could analyze approved call workflows and scripts to identify recurring errors, unnecessary steps, or opportunities to simplify the employee experience
+   
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MEASUREMENT
+         ========================================= -->
+
+    <section class="measurement">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Measurement &amp; Analytics
+            </h2>
+
+•	<b>Adoption and readiness.</b> Evaluated employee skill gaps and readiness needs associated with inbound/outbound role transitions and SAP Center implementation<br>
+•	<b>Call volume.</b> KSP ASAP was designed to support just-in-time status checks for less than 7% of call volume which reduced unnecessary call friction<br>
+•	<b>Stakeholder feedback.</b> Used focus groups and stakeholder updates to capture feedback and identify change-management opportunities approaches<br>
+•	<b>Training effectiveness.</b> Used classroom activities, role-plays, focus groups, and stakeholder feedback to identify areas requiring reinforcement or improvement<br>
+
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         OUTCOME
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                The Outcome
+            </h2>
+
+            <div class="outcome-layout">
+                <div class="outcome-list">
+                    •	Built stronger collaboration among National Training Managers and created opportunities for scalable process improvement across Sears call centers at multiple locations<br>
+                    •	Enabled employees to transition between roles (between inbound and outbound) and adopt new systems, tools, workflows, and expectations with structured training and performance support<br>
+                    •	Established practical knowledge-management and self-service resources<br>
+                    •	Introduced KSP ASAP  as a just-in-time (low code) tool to reduce status-check friction for warranty calls<br>
+                    •	Strengthened leadership capability through career-path development and the Leadership Influence framework
+
+                </div>
+
+                <figure class="outcome-image deliverables-image">
+                    <a href="../images/sears-leadership.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Leadership Influence framework graphic at full size">
+                        <img src="../images/sears-leadership.png" alt="Leadership Influence framework to transition managers into leaders">
+                    </a>
+                    <figcaption>
+                        <a href="../images/sears-leadership.png" target="_blank" rel="noopener noreferrer">Leadership Influence framework to transition <br>managers into leaders</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Ingrid Richrath
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

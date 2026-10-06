@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+    <title>KNOWLEDGE MANAGEMENT | AH™ Framework</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081B33;
+            color: #F4F7FB;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-back {
+            position: absolute;
+            top: 20px;
+            left: 5%;
+            display: inline-block;
+            color: #4DB8FF;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .portfolio-back:hover,
+        .portfolio-back:focus-visible {
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            position: relative;
+            background: #081B33;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           PRIMARY VISUAL
+           ========================================= */
+
+        .hero-visual {
+            margin: 45px auto 0;
+            max-width: 720px;
+            min-height: 0;
+
+            background: #e5e7eb;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            font-size: 1rem;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .hero-visual a {
+            display: block;
+            width: 100%;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+           ========================================= */
+
+        section {
+            padding: 28px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #F4F7FB;
+            margin-bottom: 14px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CHALLENGE
+           ========================================= */
+
+        .challenge {
+            background: #081B33;
+        }
+
+        .challenge-content {
+            max-width: 900px;
+        }
+
+        .challenge-content p {
+            font-size: 1.08rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           AH GRID
+           ========================================= */
+
+        .ah-section {
+            background: #081B33;
+        }
+
+        .ah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ah-card:nth-child(4) { grid-row: 2; grid-column: 1; }
+        .ah-chatbot-visual { grid-row: 2; grid-column: 2; margin: 0; display: flex; align-items: center; justify-content: center; }
+        .ah-chatbot-visual a { display: block; width: 100%; max-width: 240px; }
+        .ah-chatbot-visual img { display: block; width: 100%; max-width: 240px; height: auto; }
+        .ah-chatbot-visual a span { display: block; margin-top: 6px; color: #4DB8FF; font-size: 0.85rem; text-align: center; }
+        .ah-card:nth-child(6) { grid-row: 2; grid-column: 3; }
+        .ah-card:nth-child(7) { grid-row: 3; grid-column: 1; }
+        .ah-card:nth-child(8) { grid-row: 3; grid-column: 2; }
+        .ah-card:nth-child(9) { grid-row: 3; grid-column: 3; }
+
+        .ah-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ah-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .ah-card:nth-child(1) { background: #358DC3; }
+        .ah-card:nth-child(2) { background: #44BAE5; }
+        .ah-card:nth-child(3) { background: #48D1DB; }
+        .ah-card:nth-child(4) { background: #8BC94C; }
+        .ah-card:nth-child(6) { background: #BECC28; }
+        .ah-card:nth-child(7) { background: #F1C625; }
+        .ah-card:nth-child(8) { background: #F7A83F; }
+        .ah-card:nth-child(9) { background: #F5622C; }
+
+        .ah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ah-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .ah-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ah-description {
+            color: #ffffff;
+            font-size: 0.97rem;
+        }
+
+        /* =========================================
+           AI OPPORTUNITIES
+           ========================================= */
+
+        .ai-section {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .ai-section .section-intro {
+            color: #F4F7FB;
+        }
+
+        .opportunity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .opportunity {
+            padding: 22px;
+            background: #f7f8fa;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .opportunity h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .opportunity p {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           MEASUREMENT
+           ========================================= */
+
+        .measurement {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .measurement-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+            align-items: start;
+            gap: 28px;
+        }
+
+        .measurement-graphic {
+            margin: 0;
+        }
+
+        .measurement-graphic img {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .measurement-graphic figcaption {
+            margin-top: 8px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .measurement-graphic figcaption a {
+            color: #4DB8FF;
+        }
+
+        .measurement-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .measurement-box p {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           HUMAN JUDGMENT
+           ========================================= */
+
+        .human-judgment {
+            background: #081B33;
+        }
+
+        .human-box {
+            max-width: 900px;
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 14px;
+            border-left: 5px solid #374151;
+        }
+
+        .human-box p {
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           OUTCOME
+           ========================================= */
+
+        .outcome {
+            background: #081B33;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .outcome h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .outcome p {
+            max-width: 800px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .deliverables-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: start;
+            gap: 28px;
+        }
+
+        .deliverables-image {
+            margin: 0;
+        }
+
+        .deliverables-image a {
+            display: block;
+        }
+
+        .deliverables-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .deliverables-image figcaption {
+            margin-top: 3px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .deliverables-image figcaption a {
+            color: #4DB8FF;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            background: #081B33;
+            padding: 30px 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .ah-grid,
+            .opportunity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ah-card:nth-child(n) {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .ah-chatbot-visual {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 28px 0;
+            }
+
+            .deliverables-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .measurement-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <a class="portfolio-back" href="../portfolio.html">Back to Portfolio</a>
+
+            
+            </div>
+
+            <h1>
+ Cigna Knowledge Management System - <br>Enterprise Call Center Operations
+            </h1>
+
+            <p class="hero-description">
+                </p>
+Knowledge Management | Performance Improvement <br>
+&nbsp Business Transformation | Digital Solutions - Technology
+
+
+</div>
+      
+
+
+            <div class="hero-visual">
+                <a href="../images/cigna-summary-infographic.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Cigna summary infographic at full size">
+                    <img src="../images/cigna-summary-infographic.png" alt="Cigna summary infographic">
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         THE CHALLENGE
+         ========================================= -->
+
+    <section class="challenge">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                The Challenge
+            </h2>
+
+  
+                
+                                   
+Although best practices were distributed across Operations, Quality, Workforce Management, managers, supervisors, team leads, training resources, and existing systems, the challenge was to create a scalable, accessible knowledge solution that could support approximately 600 internal and vendor call center agents, including both new hires and incumbents.<BR><BR>
+The solution needed to:<BR>
+•	Establish a consistent approach to call handling across multiple audiences and locations<BR>
+•	Capture best practices from Quality and return that knowledge to Operations for frontline use<BR>
+•	Launch within a three-month timeframe<BR>
+•	Provide just-in-time access to information without relying solely on the LMS<BR>
+•	Reinforce 5 core performance expectations: courtesy/respect, compliance, confidence, information, and accuracy/performance<BR>
+•	Support knowledge needs across Appeals, Claims, Grievances, and Quality<BR>
+   
+
+    </section>
+
+
+    <!-- =========================================
+         AH APPROACH
+         ========================================= -->
+
+    <section class="ah-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AH™ Approach
+            </h2>
+
+
+AH™ is a sustainable transformation I created... to reflect my experience with strategizing the best approach... to streamline operations, optimize workflows, and align people, processes, and technology.<br><br> 
+    
+
+
+            <div class="ah-grid">
+
+
+                <!-- A -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-ai.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        A
+                    </div>
+
+                    <div class="ah-title">
+                        AI and Automation
+                    </div>
+
+                    <div class="ah-description">
+•	Identified an opportunity for an AI-enabled chat to help agents answer caller questions.<BR>
+•	Leveraged call-whisper technology that provided agents with information about the purpose of an inbound call before the interaction.<BR>
+•	Structured knowledge assets to support future AI-enabled retrieval and assistance.
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- B -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-business.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        B
+                    </div>
+
+                    <div class="ah-title">
+                        Business Transformation
+                    </div>
+
+                    <div class="ah-description">
+
+•	Created 5 STAR Call Model, a mnemonic that gave call center agents a consistent framework.<BR>
+•	Integrated just-in-time learning into C-KIT to support operations, member care, and compliance.<BR>
+•	Translated dispersed operational knowledge and best practices into a repeatable call-handling framework and scalable solution.<BR>
+
+                    </div>
+
+                </div>
+
+
+                <!-- C -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-change.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        C
+                    </div>
+
+                    <div class="ah-title">
+                        Change Management
+                    </div>
+
+                    <div class="ah-description">
+•	Applied change-management principles to move organization toward sustained new call-handling behaviors.<BR>
+•	Prepared agents, managers, supervisors, and team leads for the new call model.<BR>
+•	Supported adoption through ongoing embedment activities, huddle planners, communication, practice, coaching, and reinforcement.
+                    </div>
+
+                </div>
+
+
+                <!-- D -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-digital.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        D
+                    </div>
+
+                    <div class="ah-title">
+                        Digital Solutions
+                    </div>
+
+                    <div class="ah-description">
+
+•	Added just-in-time knowledge assets to existing C-KIT environment for ease of use - instead of the LMS.<BR>
+•	Created digital practice activities using audio examples of effective and ineffective calls.<BR>
+•	Created a customized Call Control Infographic covering techniques such as small talk, open- and closed-ended questions, and redirecting.<BR>
+
+
+                    </div>
+
+                </div>
+
+
+                <figure class="ah-chatbot-visual">
+                    <a href="../images/cigna-5star.png" target="_blank" rel="noopener noreferrer" aria-label="Click to view graphic of project's deliverables">
+                        <img src="../images/cigna-5star.png" alt="Graphic of the project's deliverables">
+                        <span>Click to view graphic <br>of project's deliverables</span>
+                    </a>
+                </figure>
+
+
+                <!-- E -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-evaluation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        E
+                    </div>
+
+                    <div class="ah-title">
+                        Evaluation and Analytics
+                    </div>
+
+                    <div class="ah-description">
+
+•	Designed Level 2 assessments around realistic scenarios requiring agents to retrieve info from knowledge assets.<BR>
+•	Used Level 3 evaluation to assess changes in call quality following implementation.<BR>
+•	Used post-launch knowledge-access activity to identify continued engagement with C-KIT resources.<BR>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- F -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-facilitation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        F
+                    </div>
+
+                    <div class="ah-title">
+                        Facilitation and Feedback
+                    </div>
+
+                    <div class="ah-description">
+•	Connected Operations, Quality, management, and frontline employees to reinforce call model.<BR>
+•	Facilitated workshops demonstrating 5 STAR Call Model to managers.<BR>
+•	Provided resources for daily team discussions.<BR>
+•	Supported managers, supervisors, and team leads in reinforcing call-handling techniques.<BR>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- G -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-governance.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        G
+                    </div>
+
+                    <div class="ah-title">
+                        Governance
+                    </div>
+
+                    <div class="ah-description">
+•	Embedded compliance expectations into call model, content, assessments, and performance-support resources.<BR>
+•	Established standardized guidance to support consistent, compliant information delivery across the call center environment.<BR>
+•	Reinforced compliant procedures for providing caller information.<BR>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- H -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-human.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        H
+                    </div>
+
+                    <div class="ah-title">
+                        Human Judgment
+                    </div>
+
+                    <div class="ah-description">
+•	Combined centralized knowledge with human coaching rather than treating KMS as a substitute for employee or manager judgment.<BR>
+•	Created 30-day huddle planner to support daily post-launch behavior reinforcement.<BR>
+•	Designed embedment assets to managers and sups to reinforce 5 STAR Call Model.<BR>
+•	Used manager and Quality feedback to identify where additional reinforcement was needed.
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- =========================================
+         DELIVERABLES
+         ========================================= -->
+
+    <section class="outcome deliverables-section">
+
+        <div class="container">
+
+            <h2>
+                Deliverables
+            </h2>
+
+            
+
+            <div class="deliverables-layout">
+                <div class="deliverables-list">
+
+•	21 eLearning courses within a blended curriculum<BR>
+•	30-day huddle meeting planner<BR>
+•	5 STAR Call Model and supporting call-control resources<BR>
+•	Agent actions and talking points<BR>
+•	Audio-based good-call and bad-call practice activities<BR>
+•	Call Control Infographic<BR>
+•	C-KIT knowledge-management content<BR>
+•	Just-in-time learning resources<BR>
+•	Management workshop and coaching resources<BR>
+•	Manager and supervisor embedment resources<BR>
+•	Scenario-based LMS assessment<BR>
+
+                </div>
+                <figure class="deliverables-image">
+                    <a href="../images/cigna-5star-callmodel.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Cigna 5 STAR Call Model and Phrase Playbook graphic at full size">
+                        <img src="../images/cigna-5star-callmodel.png" alt="Cigna 5 STAR Call Model and Phrase Playbook">
+                    </a>
+                    <figcaption><a href="../images/cigna-5star-callmodel.png" target="_blank" rel="noopener noreferrer">Cigna 5 STAR Call Model and Phrase Playbook</a></figcaption>
+                </figure>
+            </div>
+
+     
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI-ENABLED OPPORTUNITIES
+         ========================================= -->
+
+    <section class="ai-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AI-Enabled Opportunities
+            </h2>
+
+            <p class="section-intro">
+
+•	Identified call-whisper technology as an opportunity to provide info to agents before an inbound call<BR>
+•	Proposed an AI chat capability to help agents quickly locate approved information relevant to caller questions<BR>
+
+
+
+
+
+
+
+ 
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MEASUREMENT
+         ========================================= -->
+
+    <section class="measurement">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Measurement and Analytics
+            </h2>
+
+            <div class="measurement-layout">
+                <div class="measurement-copy">
+
+
+•	<b>Organizational Impact - Level 4 Metrics<BR></b>
+	&nbsp &nbsp &nbsp &nbsp NPS trends and post-launch call-quality results (see graphic)<BR>
+•	<b>Learner Feedback - Level 1 Metrics (132 survey)<BR></b>
+	&nbsp &nbsp &nbsp &nbsp Content satisfaction: 4.15 to 4.24 out of 5<BR>
+	&nbsp &nbsp &nbsp &nbsp Online delivery: 4.25 to 4.35 out of 5<BR>
+	&nbsp &nbsp &nbsp &nbsp User friendliness: 4.26 to 4.40 out of 5<BR>
+•	Updated-content notifications: 23 users received notifications through C-KIT KMS<BR>
+    •	C-KIT knowledge activity: 2,759 recorded activities following launch<BR>
+
+                </div>
+                <figure class="measurement-graphic">
+                    <a href="../images/Cigna-nps-level4.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Cigna NPS scores graphic at full size">
+                        <img src="../images/Cigna-nps-level4.png" alt="Cigna NPS level 4 results">
+                    </a>
+                    <figcaption><a href="../images/Cigna-nps-level4.png" target="_blank" rel="noopener noreferrer">Cigna NPS scores pre- and post-go-live <br>along with learner feedback scores</a></figcaption>
+                </figure>
+            </div>
+
+           
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         OUTCOME
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                The Outcome
+            </h2>
+
+
+                •	Created a scalable knowledge-management approach that connected people, content, systems, processes, and performance support<br>
+                •	Agents received easier access to relevant information at the point of need <br>
+                •	Gave managers and Quality teams practical mechanisms to reinforce, monitor, and improve performance <br>
+                •	Improved call quality post-launch with a 91% NPS outcome
+
+
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Ingrid Richrath
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

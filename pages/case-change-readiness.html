@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+    <title>CHANGE READINESS AND ADOPTION | AH™ Framework</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081B33;
+            color: #F4F7FB;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-back {
+            position: absolute;
+            top: 20px;
+            left: 5%;
+            display: inline-block;
+            color: #4DB8FF;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .portfolio-back:hover,
+        .portfolio-back:focus-visible {
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            position: relative;
+            background: #081B33;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           PRIMARY VISUAL
+           ========================================= */
+
+        .hero-visual {
+            margin: 45px auto 0;
+            max-width: 720px;
+            min-height: 0;
+
+            background: #e5e7eb;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            font-size: 1rem;
+            text-align: center;
+            padding: 16px;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        .hero-visual a {
+            display: block;
+            width: 100%;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+           ========================================= */
+
+        section {
+            padding: 28px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #F4F7FB;
+            margin-bottom: 14px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CHALLENGE
+           ========================================= */
+
+        .challenge {
+            background: #081B33;
+        }
+
+        .challenge-content {
+            max-width: 900px;
+        }
+
+        .challenge-content p {
+            font-size: 1.08rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           AH GRID
+           ========================================= */
+
+        .ah-section {
+            background: #081B33;
+        }
+
+        .ah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ah-card:nth-child(4) { grid-row: 2; grid-column: 1; }
+        .ah-chatbot-visual { grid-row: 2; grid-column: 2; margin: 0; display: flex; align-items: center; justify-content: center; }
+        .ah-chatbot-visual a { display: block; width: 100%; max-width: 240px; }
+        .ah-chatbot-visual img { display: block; width: 100%; max-width: 240px; height: auto; }
+        .ah-chatbot-visual a span { display: block; margin-top: 6px; color: #4DB8FF; font-size: 0.85rem; text-align: center; }
+        .ah-card:nth-child(6) { grid-row: 2; grid-column: 3; }
+        .ah-card:nth-child(7) { grid-row: 3; grid-column: 1; }
+        .ah-card:nth-child(8) { grid-row: 3; grid-column: 2; }
+        .ah-card:nth-child(9) { grid-row: 3; grid-column: 3; }
+
+        .ah-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ah-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .ah-card:nth-child(1) { background: #358DC3; }
+        .ah-card:nth-child(2) { background: #44BAE5; }
+        .ah-card:nth-child(3) { background: #48D1DB; }
+        .ah-card:nth-child(4) { background: #8BC94C; }
+        .ah-card:nth-child(6) { background: #BECC28; }
+        .ah-card:nth-child(7) { background: #F1C625; }
+        .ah-card:nth-child(8) { background: #F7A83F; }
+        .ah-card:nth-child(9) { background: #F5622C; }
+
+        .ah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ah-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .ah-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ah-description {
+            color: #ffffff;
+            font-size: 0.97rem;
+        }
+
+        /* =========================================
+           AI OPPORTUNITIES
+           ========================================= */
+
+        .ai-section {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .ai-section .section-intro {
+            color: #F4F7FB;
+        }
+
+        .opportunity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .opportunity {
+            padding: 22px;
+            background: #f7f8fa;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .opportunity h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .opportunity p {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           MEASUREMENT
+           ========================================= */
+
+        .measurement {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .measurement-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .measurement-box p {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           HUMAN JUDGMENT
+           ========================================= */
+
+        .human-judgment {
+            background: #081B33;
+        }
+
+        .human-box {
+            max-width: 900px;
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 14px;
+            border-left: 5px solid #374151;
+        }
+
+        .human-box p {
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           OUTCOME
+           ========================================= */
+
+        .outcome {
+            background: #081B33;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .outcome h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .outcome p {
+            max-width: 800px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .deliverables-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            align-items: start;
+            gap: 28px;
+        }
+
+        .deliverables-image {
+            margin: 0;
+        }
+
+        .deliverables-image a {
+            display: block;
+        }
+
+        .deliverables-image img {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+
+        .deliverables-image figcaption {
+            margin-top: 8px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .deliverables-image figcaption a {
+            color: #4DB8FF;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            background: #081B33;
+            padding: 30px 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .ah-grid,
+            .opportunity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ah-card:nth-child(n) {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .ah-chatbot-visual {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 28px 0;
+            }
+
+            .deliverables-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <a class="portfolio-back" href="../portfolio.html">Back to Portfolio</a>
+
+            
+            </div>
+
+            <h1>
+                Centene End-To-End Transformation <br> Appeal Workflow (from 6 people to 1) 
+            </h1>
+
+            <p class="hero-description">
+                Change Readiness and Adoption | Organizational Change Management (OCM) </p>
+               <center>Workforce Enablement</center>
+</div>
+      
+
+
+            <div class="hero-visual">
+                <a href="../images/case-change-Infographic.png" target="_blank" rel="noopener noreferrer" aria-label="Open the change readiness infographic at full size">
+                    <img src="../images/case-change-Infographic.png" alt="Change readiness and adoption infographic">
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         THE CHALLENGE
+         ========================================= -->
+
+    <section class="challenge">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                The Challenge
+            </h2>
+
+
+                
+                                   
+                     Associates previously interacted with an appeal at only one point in the process. The transformation required them to understand and manage the complete appeals lifecycle. The workforce did not fully understand the change or have confidence that leadership supported the new way of working. The initiative therefore required significant change readiness, stakeholder alignment, workforce enablement, and process knowledge development.
+<br><br>
+
+                    The change was designed to:<br>
+•	Enable scalable knowledge transfer<br>
+•	Reduce errors<br>
+•	Reduce repetitive work and duplicate review<br>
+•	Improve response time<br>
+               
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         AH APPROACH
+         ========================================= -->
+
+    <section class="ah-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AH™ Approach
+            </h2>
+
+
+                        AH™ is a sustainable transformation I created... to reflect my experience with strategizing the best approach... to streamline operations, optimize workflows, and align people, processes, and technology.<br><br> 
+
+
+
+            <div class="ah-grid">
+
+
+                <!-- A -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-ai.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        A
+                    </div>
+
+                    <div class="ah-title">
+                        AI and Automation
+                    </div>
+
+                    <div class="ah-description">
+                       •	Identified opportunities to use AI to categorize incoming appeals and support quality.<br>
+•	Developed an Ask SPRING chatbot concept to support the appeals workflow.
+
+                    </div>
+
+                </div>
+
+
+                <!-- B -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-business.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        B
+                    </div>
+
+                    <div class="ah-title">
+                        Business Transformation
+                    </div>
+
+                    <div class="ah-description">
+•	Aligned transformation to business objectives, operating model, roles, and processes.<br>
+•	Applied workforce development, blended learning, competency development, learner engagement, and performance support.<br>
+•	Translated end-to-end appeals process into a learnable and usable model.
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- C -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-change.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        C
+                    </div>
+
+                    <div class="ah-title">
+                        Change Management
+                    </div>
+
+                    <div class="ah-description">
+                        •	Supported organizational restructuring involving 6 role consolidation .<br>
+•	Communicated rationale, impacts, and implications of change across leadership, stakeholders, and frontline associates.<br>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- D -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-digital.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        D
+                    </div>
+
+                    <div class="ah-title">
+                        Digital Solutions
+                    </div>
+
+                    <div class="ah-description">
+•	Consolidated IRE materials with online help.<br>
+•	Developed a PowerBuilder/Excel appeal classification tool.<br>
+•	Developed a quality audit tool to introduce standards and risk controls.<br>
+
+                    </div>
+
+                </div>
+
+
+                <figure class="ah-chatbot-visual">
+                    <a href="../images/spring-chatbot.png" target="_blank" rel="noopener noreferrer" aria-label="Open the SPRING chatbot image at full size">
+                        <img src="../images/spring-chatbot.png" alt="SPRING chatbot guiding users through appeal and inquiry options">
+                        <span>Click to view SPRING chatbot<br> within MS Teams</span>
+                    </a>
+                </figure>
+
+
+                <!-- E -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-evaluation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        E
+                    </div>
+
+                    <div class="ah-title">
+                        Evaluation and Analytics
+                    </div>
+
+                    <div class="ah-description">
+•	Evaluated workforce impacts associated with 6 role consolidation.<br>
+•	Gathered and analyzed stakeholder feedback to identify readiness gaps and transition needs.<br>
+
+                    </div>
+
+                </div>
+
+
+                <!-- F -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-facilitation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        F
+                    </div>
+
+                    <div class="ah-title">
+                        Facilitation and Feedback
+                    </div>
+
+                    <div class="ah-description">
+•	Engaged stakeholders to understand concerns and perspectives.<br>
+•	Identified resistance and factors affecting workforce acceptance.<br>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- G -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-governance.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        G
+                    </div>
+
+                    <div class="ah-title">
+                        Governance
+                    </div>
+
+                    <div class="ah-description">
+                       •	Embedded quality standards and risk controls into the appeals process through a quality audit tool.<br>
+                    </div>
+
+                </div>
+
+
+                <!-- H -->
+
+                <div class="ah-card">
+
+                    <img class="ah-icon" src="../images/icon-human.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        H
+                    </div>
+
+                    <div class="ah-title">
+                        Human Judgment
+                    </div>
+
+                    <div class="ah-description">
+•	Communicated significant risks to leadership throughout project.<br>
+•	Continued to raise concerns about resistance.<br>
+•	One week before go-live, new leadership halted implementation of the transformation.<br>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- =========================================
+         DELIVERABLES
+         ========================================= -->
+
+    <section class="outcome deliverables-section">
+
+        <div class="container">
+
+            <h2>
+                Deliverables
+            </h2>
+
+            
+
+            <div class="deliverables-layout">
+                <div class="deliverables-list">
+•	AI-enabled appeals chatbot concept<BR>
+•	Blended learning and performance support<BR>
+•	Change impact and readiness assessments<BR>
+•	IRE assembly packet and online help<BR>
+•	PATH troubleshooting workflow<BR>
+•	PowerBuilder/Excel appeal classification tool<BR>
+•	Quality audit and risk-control tool (see graphic)<BR>
+•	Resistance-management and manager support materials<BR>
+•	SPRING end-to-end appeals lifecycle model<BR>
+•	Stakeholder analysis and communications<BR>
+•	STARS appeal-classification framework
+                </div>
+                <figure class="deliverables-image">
+                    <a href="../images/centene-audit-tool.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Centene audit tool image at full size">
+                        <img src="../images/centene-audit-tool.png" alt="Appeals quality audit tool showing review criteria, information-finding guidance, and workflow screenshots">
+                    </a>
+                    <figcaption><a href="../images/centene-audit-tool.png" target="_blank" rel="noopener noreferrer">Quality audit and risk-control tool</a></figcaption>
+                </figure>
+            </div>
+
+     
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI-ENABLED OPPORTUNITIES
+         ========================================= -->
+
+    <section class="ai-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AI-Enabled Opportunities
+            </h2>
+
+•	<b>Ask SPRING Chatbot:</b> an AI-enabled support for categorizing incoming appeals, navigating the appeals lifecycle, and improving consistency and quality
+
+
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MEASUREMENT
+         ========================================= -->
+
+    <section class="measurement">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Measurement and Analytics
+            </h2>
+
+                   <b>Change Readiness</b><br>
+•	Gathered and analyzed stakeholder feedback to identify concerns and readiness gaps<br>
+•	Assessed workforce impact associated with the six-role consolidation<br>
+•	Identified resistance and areas requiring additional communication, training, and change support<br>
+•	Communicated implementation risks and readiness concerns to leadership
+
+             
+
+           
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         OUTCOME
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                The Outcome
+            </h2>
+
+                •	Change-management risks identified during implementation informed leadership decisions regarding the transformation<br>
+                •	Employees gained greater clarity around what was changing, why it mattered, how roles and responsibilities would be affected, and what would be required of them<br>
+
+                •	SPRING lifecycle model provided an end-to-end appeals process which associates were expected to learn and apply<br>
+                •	Workforce readiness gaps, stakeholder resistance, and implementation risks were identified and communicated before go-live<br>
+                •	New leadership halted the project one week before go-live, so the intended operational adoption and performance outcomes were not realized
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Ingrid Richrath
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

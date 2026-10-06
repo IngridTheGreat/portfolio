@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+    <title>[USE CASE TITLE] | AH™ Framework</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081B33;
+            color: #F4F7FB;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-back {
+            position: absolute;
+            top: 20px;
+            left: 5%;
+            display: inline-block;
+            color: #4DB8FF;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .portfolio-back:hover,
+        .portfolio-back:focus-visible {
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            position: relative;
+            background: #081B33;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           PRIMARY VISUAL
+           ========================================= */
+
+        .hero-visual {
+            margin: 45px auto 0;
+            max-width: 1000px;
+            min-height: 320px;
+
+            background: transparent;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #ffffff;
+            font-size: 1rem;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            max-width: 720px;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            background: transparent;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+           ========================================= */
+
+        section {
+            padding: 28px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #F4F7FB;
+            margin-bottom: 14px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #ffffff;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CHALLENGE
+           ========================================= */
+
+        .challenge {
+            background: #081B33;
+        }
+
+        .challenge-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 360px);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .challenge-content {
+            max-width: 900px;
+        }
+
+        .challenge-content p {
+            font-size: 1.08rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           AH GRID
+           ========================================= */
+
+        .ah-section {
+            background: #081B33;
+        }
+
+        .ah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .ah-card.a { grid-row: 1; grid-column: 1; }
+        .ah-card.b { grid-row: 1; grid-column: 2; }
+        .ah-card.c { grid-row: 1; grid-column: 3; }
+        .ah-card.d { grid-row: 2; grid-column: 1; }
+        .ah-card.e { grid-row: 2; grid-column: 3; }
+        .ah-card.f { grid-row: 3; grid-column: 1; }
+        .ah-card.g { grid-row: 3; grid-column: 2; }
+        .ah-card.h { grid-row: 3; grid-column: 3; }
+
+        .ah-visual-card {
+            grid-row: 2;
+            grid-column: 2;
+            justify-self: center;
+            align-self: center;
+            width: 100%;
+            max-width: 220px;
+            background: transparent;
+            border-radius: 14px;
+            padding: 0;
+            margin: 0;
+            box-shadow: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ah-visual-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background: transparent;
+        }
+
+        .ah-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ah-icon {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+        }
+
+        .ah-card.a { background: #358DC3; }
+        .ah-card.b { background: #44BAE5; }
+        .ah-card.c { background: #48D1DB; }
+        .ah-card.d { background: #8BC94C; }
+        .ah-card.e { background: #BECC28; }
+        .ah-card.f { background: #F1C625; }
+        .ah-card.g { background: #F7A83F; }
+        .ah-card.h { background: #F5622C; }
+
+        .ah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ah-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .ah-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ah-description {
+            color: #ffffff;
+            font-size: 0.97rem;
+        }
+
+        .deliverables-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 360px);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .deliverables-list {
+            color: #ffffff;
+        }
+
+        .deliverables-image {
+            margin: 0;
+            text-align: center;
+        }
+
+        .deliverables-image a {
+            display: block;
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        .deliverables-image img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 6px;
+        }
+
+        .deliverables-image figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #4DB8FF;
+            line-height: 1.4;
+        }
+
+        .deliverables-image figcaption a {
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        /* =========================================
+           AI OPPORTUNITIES
+           ========================================= */
+
+        .ai-section {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .opportunity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .opportunity {
+            padding: 22px;
+            background: #f7f8fa;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .opportunity h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .opportunity p {
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           MEASUREMENT
+           ========================================= */
+
+        .measurement {
+            background: #081B33;
+            padding-top: 12px;
+            padding-bottom: 18px;
+        }
+
+        .measurement-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 360px);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .measurement-list {
+            color: #ffffff;
+        }
+
+        .measurement-visual {
+            margin: 0;
+            text-align: center;
+        }
+
+        .measurement-visual a {
+            display: block;
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        .measurement-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 6px;
+        }
+
+        .measurement-visual figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #4DB8FF;
+            line-height: 1.4;
+        }
+
+        .measurement-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .measurement-box p {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           HUMAN JUDGMENT
+           ========================================= */
+
+        .human-judgment {
+            background: #081B33;
+        }
+
+        .human-box {
+            max-width: 900px;
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 14px;
+            border-left: 5px solid #374151;
+        }
+
+        .human-box p {
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           OUTCOME
+           ========================================= */
+
+        .outcome {
+            background: #081B33;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .outcome-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(220px, 360px);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .outcome-text {
+            color: #ffffff;
+        }
+
+        .outcome-visual {
+            margin: 0;
+            text-align: center;
+        }
+
+        .outcome-visual a {
+            display: block;
+            color: #4DB8FF;
+            text-decoration: none;
+        }
+
+        .outcome-visual img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            background: #ffffff;
+            padding: 6px;
+        }
+
+        .outcome-visual figcaption {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            color: #4DB8FF;
+            line-height: 1.4;
+        }
+
+        .outcome h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .outcome p {
+            max-width: 800px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            background: #081B33;
+            padding: 30px 0;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0 35px;
+            }
+
+            .challenge-layout,
+            .outcome-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .ah-grid,
+            .opportunity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ah-card:nth-child(n) {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 45px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <a class="portfolio-back" href="../portfolio.html">Back to Portfolio</a>
+
+
+            <h1>
+               Humana Sales Agent - <br>Annual Recertification Program
+            </h1>
+
+            <p class="hero-description">
+Governance & Compliance | Digital Solutions<br>
+Evaluation & Analytics | Facilitation & Stakeholder Engagement<br>
+
+            </p>
+
+
+            <!-- PRIMARY VISUAL
+                 Replace this placeholder with your image.
+                 Example:
+                 <img src="images/change-readiness.jpg"
+                      alt="Change readiness and adoption journey">
+            -->
+
+            <div class="hero-visual">
+                <a href="../images/humana-infographic.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Humana infographic at full size">
+                    <img src="../images/humana-infographic.png" alt="Humana recertification and compliance infographic" style="max-width: 720px; margin: 0 auto;">
+                </a>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         THE CHALLENGE
+         ========================================= -->
+
+    <section class="challenge">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                The Challenge
+            </h2>
+
+            <div class="challenge-layout">
+                <div class="challenge-content">
+                    Humana's MarketPoint organization required an annual recertification program for approximately 90,000 sales agents, ensuring ongoing compliance with Medicare regulations while maintaining engagement, reducing learner fatigue, and minimizing operational disruptions.<br><br>
+                    The existing program contained recurring content, lengthy training experiences, and compressed update cycles that created challenges for both learners and stakeholders. The initiative required a scalable approach that balanced regulatory requirements, learner experience, stakeholder expectations, accessibility standards, and business performance outcomes.<br><br>
+                    The goal was to transform recertification from a compliance exercise into a streamlined, engaging, and data-informed enablement experience that improved adoption, reduced redundancy, and supported business readiness year after year.
+                </div>
+
+                <figure class="outcome-visual">
+                    <a href="https://www.youtube.com/watch?v=TcCSS9KjllM" target="_blank" rel="noopener noreferrer" aria-label="Open the project podcast video on YouTube">
+                        <img src="../images/humana-project-podcast.png" alt="Humana project podcast graphic">
+                    </a>
+                    <figcaption>
+                        <a href="https://www.youtube.com/watch?v=TcCSS9KjllM" target="_blank" rel="noopener noreferrer">Click to watch podcast video explaining Ingrid's leadership that drove meaningful business outcomes</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         AH APPROACH
+         ========================================= -->
+
+    <section class="ah-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AH™ Approach
+            </h2>
+
+         
+              
+                        AH™ is a sustainable transformation I created... to reflect my experience with strategizing the best approach... to streamline operations, optimize workflows, and align people, processes, and technology.<br><br> 
+   
+
+
+            <div class="ah-grid">
+
+
+                <!-- A -->
+
+                <div class="ah-card a">
+
+                    <img class="ah-icon" src="../images/icon-ai.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        A
+                    </div>
+
+                    <div class="ah-title">
+                        AI and Automation
+                    </div>
+
+                    <div class="ah-description">
+•	Automated repetitive tasks through custom tools and macros, reducing manual effort and accelerating prod timelines.<br>
+•	Created TOUR (Technical Order and Update Request) intake system using Microsoft Planner for content revisions, approvals, and technical requests.<br>
+•	Leveraged technology to streamline collaboration between instructional designers, developers, SMEs, and compliance stakeholders.
+
+                    </div>
+
+                </div>
+
+
+                <!-- B -->
+
+                <div class="ah-card b">
+
+                    <img class="ah-icon" src="../images/icon-business.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        B
+                    </div>
+
+                    <div class="ah-title">
+                        Business Transformation
+                    </div>
+
+                    <div class="ah-description">
+
+•	Developed a September compliance addendum that minimized late-cycle changes and reduced risk during annual launch periods.<br>
+•	Eliminated redundant content and simplified complex regulatory information to improve comprehension and completion rates.<br>
+•	Established a scalable volunteer recruitment model through Workday, enabling associates to contribute to enterprise projects while supporting professional development.<br>
+•	Introduced animation, storytelling, and interactive elements to increase engagement and reduce compliance-related errors.<br>
+•	Transformed annual recertification delivery for 90,000 sales agents over three consecutive years.<br>
+                    </div>
+
+                </div>
+                <!-- C -->
+                <div class="ah-card c">
+
+                    <img class="ah-icon" src="../images/icon-change.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        C
+                    </div>
+
+                    <div class="ah-title">
+                        Change Management
+                    </div>
+
+                    <div class="ah-description">
+•	Developed stakeholder communication plans for sponsors, leaders, managers, and frontline.<br>
+•	Directed change readiness activities for annual certification, new technologies, and process improvements.<br>
+•	Ensured alignment between business, compliance, and learner needs throughout project lifecycle.<br>
+•	Recruited and onboarded 20-60 associates per initiative to participate in testing, readiness assessments, and feedback activities.<br>
+
+                    </div>
+
+                </div>
+
+
+                <!-- D -->
+
+                <div class="ah-card d">
+
+                    <img class="ah-icon" src="../images/icon-digital.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        D
+                    </div>
+
+                    <div class="ah-title">
+                        Digital Solutions
+                    </div>
+
+                    <div class="ah-description">
+•	Built digital learning solutions that enabled associates to access just-in-time training.<br>
+•	Redesigned annual telesales programs using video learning and live virtual instruction.<br>
+•	Streamlined storyboard review processes using Microsoft Teams collaboration workflows.<br>
+•	Developed productivity tools that reduced development and accelerated production.<br>
+•	Enhanced digital content with custom graphics, avatars, icons, roadmaps, and mobile-focused visual experiences.
+                    </div>
+                </div>
+
+                <figure class="ah-visual-card">
+                    <img src="../images/humana-members.png" alt="Humana members illustration">
+                </figure>
+
+                <!-- E -->
+
+                <div class="ah-card e">
+
+                    <img class="ah-icon" src="../images/icon-evaluation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        E
+                    </div>
+
+                    <div class="ah-title">
+                        Evaluation and Analytics
+                    </div>
+
+                    <div class="ah-description">
+•	Achieved 89% Net Promoter Score (NPS) on quality and user acceptance testing initiatives.<br>
+•	Analyzed 38,000 learner surveys and more than 7,100 verbatim comments following recertification deployment.<br>
+•	Built Excel analytics solutions to automate keyword extraction and sentiment analysis.<br>
+•	Discovered "thank" over 1,500+ times, reinforcing perceptions of clarity and usefulness.<br>
+•	Measured business impact using compliance metrics, satisfaction scores, call-handling performance, and stakeholder feedback.<br>
+
+
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- F -->
+
+                <div class="ah-card f">
+
+                    <img class="ah-icon" src="../images/icon-facilitation.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        F
+                    </div>
+
+                    <div class="ah-title">
+                        Facilitation and Feedback
+                    </div>
+
+                    <div class="ah-description">
+•	Collaborated with senior leaders, compliance, sales, and business sponsors to update recert.<br>
+•	Converted stakeholder insights into actionable improvements to enhance learner experience and business outcomes.<br>
+•	Facilitated stakeholder reviews, feedback sessions, testing activities, and implementation readiness discussions.<br>
+•	Leveraged learner feedback from tens of thousands of participants for future design decisions.<br>
+                    </div>
+                </div>
+
+
+                <!-- G -->
+
+                <div class="ah-card g">
+
+                    <img class="ah-icon" src="../images/icon-governance.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        G
+                    </div>
+
+                    <div class="ah-title">
+                        Governance
+                    </div>
+
+                    <div class="ah-description">
+•	Developed rubrics, defect reporting standards, and review processes to improve quality.<br>
+•	Embedded accessibility, proofreading, quality, and compliance standards into workflows.<br>
+•	Led efforts to operationalize accessibility standards to support diverse learner needs.<br>
+•	Managed enterprise QA and UAT efforts involving 20-60 volunteer testers per project.<br>
+•	Mentored peers and promoted best practices related to instructional design, accessibility, testing, and governance.<br>
+                    </div>
+                </div>
+
+                <!-- H -->
+
+                <div class="ah-card h">
+
+                    <img class="ah-icon" src="../images/icon-human.png" alt="" aria-hidden="true">
+
+                    <div class="ah-letter">
+                        H
+                    </div>
+
+                    <div class="ah-title">
+                        Human Judgment
+                    </div>
+
+                    <div class="ah-description">
+•	Collaborated with Compliance, Sales, managers, new hires, tenured associates, and SMEs to refine content and improve outcomes.<br>
+•	Conducted root-cause analysis to distinguish issues between training, systems, process gaps, knowledge and performance barriers.<br>
+•	Prevented unnecessary content repetition by focusing on learner-relevant information and demonstrated performance needs.<br>
+•	Recognized with 7 Employee Star Awards for training, change management, and business transformation contributions.<br>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- =========================================
+         DELIVERABLES
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                Deliverables
+            </h2>
+
+            <div class="deliverables-layout">
+                <div class="deliverables-list">
+                    •	Accessibility standards and style guides<br>
+                    •	Animated learning assets<br>
+                    •	Communication plans for internal and external stakeholders<br>
+                    •	Enterprise annual recertification program<br>
+                    •	Executive reporting and analytics summaries<br>
+                    •	Interactive eLearning modules<br>
+                    •	Medicare compliance curriculum<br>
+                    •	Performance support resources and job aids<br>
+                    •	QA and UAT test plans<br>
+                    •	Recertification update learning path<br>
+                    •	Stakeholder readiness materials<br>
+                    •	Survey and evaluation dashboards<br>
+                    •	TOUR intake and content workflow system for version control<br>
+                </div>
+
+                <figure class="deliverables-image">
+                    <a href="../images/humana-animation.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Humana animation graphic at full size">
+                        <img src="../images/humana-animation.png" alt="Humana animation graphic">
+                    </a>
+                    <figcaption>
+                        <a href="../images/humana-animation.png" target="_blank" rel="noopener noreferrer">Improved corporate compliance<br> and learning engagement</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI-ENABLED OPPORTUNITIES
+         ========================================= -->
+
+    <section class="ai-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AI-Enabled Opportunities
+            </h2>
+
+            <p class="section-intro">
+•	AI-assisted regulatory content analysis to identify policy changes and recommend curriculum updates<br>
+•	Automated accessibility reviews to improve compliance and reduce manual testing effort<br>
+•	Intelligent tagging and categorization of stakeholder feedback from thousands of learner comments<br>
+
+
+ 
+                        <br>
+            </p>
+
+
+           
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MEASUREMENT
+         ========================================= -->
+
+    <section class="measurement">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Measurement &amp; Analytics
+            </h2>
+
+            <div class="measurement-layout">
+                <div class="measurement-list">
+                    •	78% reduction of non-compliance sales due to non-certified sales agents<br>
+                    •	89% NPS for QA/UAT Initiatives<br>
+                    •	20-60 QA/UAT participants recruited per project using Workday initiative<br>
+                    •	90,000 sales agents supported annually<br>
+                    •	38,000 survey responses analyzed<br>
+                    •	7,100+ verbatim comments reviewed <br>
+                    •	7 Employee Star Awards Received<br>
+                </div>
+
+                <figure class="measurement-visual">
+                    <a href="../images/humana-roi-noncompliance.png" target="_blank" rel="noopener noreferrer" aria-label="Open the non-compliance reduction graphic at full size">
+                        <img src="../images/humana-roi-noncompliance.png" alt="78% reduction of non-compliance sales due to non-certified sales agents">
+                    </a>
+                    <figcaption>
+                        <a href="../images/humana-roi-noncompliance.png" target="_blank" rel="noopener noreferrer">78% reduction of non-compliance sales <br>due to non-certified sales agents</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         OUTCOME
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                The Outcome
+            </h2>
+
+            <div class="outcome-layout">
+                <div class="outcome-text">
+
+•	By simplifying content, improving governance, embedding accessibility standards, leveraging analytics, and strengthening stakeholder engagement, the program improved learner experience while maintaining regulatory compliance for approximately 90,000 sales agents annually<br>
+•	Humana Annual Recertification Program evolved from a recurring compliance requirement into a scalable enterprise learning and change management initiative <br>
+•	Initiative established sustainable processes for content updates, testing, feedback collection, and stakeholder collaboration that continued to support future certification cycles<br>
+•	Result was a more engaging, efficient, and business-aligned recertification experience that balanced compliance requirements with real-world performance needs
+                </div>
+
+                <figure class="outcome-visual">
+                    <a href="../images/humana-leaders-snapshot.png" target="_blank" rel="noopener noreferrer" aria-label="Open the leadership snapshot graphic at full size">
+                        <img src="../images/humana-leaders-snapshot.png" alt="Leadership snapshot showing 88.99 overall satisfaction for PY21 Certification and Recertification">
+                    </a>
+                    <figcaption>
+                        <a href="../images/humana-leaders-snapshot.png" target="_blank" rel="noopener noreferrer">Leadership snapshot shows a 88.99 overall satisfaction <br>to the PY21 Certification and Recertification</a>
+                    </figcaption>
+                </figure>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Ingrid Richrath
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

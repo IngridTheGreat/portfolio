@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =========================================
+         PAGE TITLE
+         ========================================= -->
+    <title>[USE CASE TITLE] | AH™ Framework</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #081B33;
+            color: #F4F7FB;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           HERO
+           ========================================= */
+
+        .hero {
+            background: #081B33;
+            padding: 70px 0 50px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #ffffff;
+        }
+
+        /* =========================================
+           PRIMARY VISUAL
+           ========================================= */
+
+        .hero-visual {
+            margin: 45px auto 0;
+            max-width: 1000px;
+            min-height: 320px;
+
+            background: #e5e7eb;
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #6b7280;
+            font-size: 1rem;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+        }
+
+        /* =========================================
+           GENERAL SECTIONS
+           ========================================= */
+
+        section {
+            padding: 65px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            color: #F4F7FB;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            max-width: 850px;
+            color: #D2D2D0;
+            margin-bottom: 35px;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           CHALLENGE
+           ========================================= */
+
+        .challenge {
+            background: #081B33;
+        }
+
+        .challenge-content {
+            max-width: 900px;
+        }
+
+        .challenge-content p {
+            font-size: 1.08rem;
+            color: #D2D2D0;
+        }
+
+        /* =========================================
+           AH GRID
+           ========================================= */
+
+        .ah-section {
+            background: #081B33;
+        }
+
+        .ah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .ah-card:nth-child(4) { grid-row: 2; grid-column: 1; }
+        .ah-card:nth-child(5) { grid-row: 2; grid-column: 3; }
+        .ah-card:nth-child(6) { grid-row: 3; grid-column: 1; }
+        .ah-card:nth-child(7) { grid-row: 3; grid-column: 2; }
+        .ah-card:nth-child(8) { grid-row: 3; grid-column: 3; }
+
+        .ah-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 25px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ah-card:nth-child(1) { background: #358DC3; }
+        .ah-card:nth-child(2) { background: #44BAE5; }
+        .ah-card:nth-child(3) { background: #48D1DB; }
+        .ah-card:nth-child(4) { background: #8BC94C; }
+        .ah-card:nth-child(5) { background: #BECC28; }
+        .ah-card:nth-child(6) { background: #F1C625; }
+        .ah-card:nth-child(7) { background: #F7A83F; }
+        .ah-card:nth-child(8) { background: #F5622C; }
+
+        .ah-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .ah-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .ah-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .ah-description {
+            color: #ffffff;
+            font-size: 0.97rem;
+        }
+
+        /* =========================================
+           AI OPPORTUNITIES
+           ========================================= */
+
+        .ai-section {
+            background: #081B33;
+        }
+
+        .opportunity-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .opportunity {
+            padding: 22px;
+            background: #f7f8fa;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .opportunity h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #111827;
+        }
+
+        .opportunity p {
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        /* =========================================
+           MEASUREMENT
+           ========================================= */
+
+        .measurement {
+            background: #081B33;
+        }
+
+        .measurement-box {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .measurement-box p {
+            margin-bottom: 20px;
+            color: #4b5563;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .metric {
+            background: #f7f8fa;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .metric-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #6b7280;
+        }
+
+        /* =========================================
+           HUMAN JUDGMENT
+           ========================================= */
+
+        .human-judgment {
+            background: #081B33;
+        }
+
+        .human-box {
+            max-width: 900px;
+            padding: 30px;
+            background: #f7f8fa;
+            border-radius: 14px;
+            border-left: 5px solid #374151;
+        }
+
+        .human-box p {
+            color: #374151;
+            font-size: 1.05rem;
+        }
+
+        /* =========================================
+           OUTCOME
+           ========================================= */
+
+        .outcome {
+            background: #081B33;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .outcome h2 {
+            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .outcome p {
+            max-width: 800px;
+            margin: 0;
+            font-size: 1.1rem;
+            color: #e5e7eb;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+
+        footer {
+            background: #081B33;
+            padding: 30px 0;
+            text-align: center;
+            color: #D2D2D0;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE
+           ========================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                padding: 50px 0 35px;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .ah-grid,
+            .opportunity-list {
+                grid-template-columns: 1fr;
+            }
+
+            .ah-card:nth-child(n) {
+                grid-row: auto;
+                grid-column: auto;
+            }
+
+            .metrics {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 45px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .container {
+                width: 92%;
+            }
+
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual {
+                min-height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HERO
+         ========================================= -->
+
+    <header class="hero">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                [CATEGORY: PEOPLE / LEARNING / KNOWLEDGE / PROCESS]
+            </div>
+
+            <h1>
+                [USE CASE TITLE]
+            </h1>
+
+            <p class="hero-description">
+                [ONE-SENTENCE DESCRIPTION OF THE USE CASE]
+            </p>
+
+
+            <!-- PRIMARY VISUAL
+                 Replace this placeholder with your image.
+                 Example:
+                 <img src="images/change-readiness.jpg"
+                      alt="Change readiness and adoption journey">
+            -->
+
+            <div class="hero-visual">
+                [PRIMARY USE CASE VISUAL]
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         THE CHALLENGE
+         ========================================= -->
+
+    <section class="challenge">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                The Challenge
+            </h2>
+
+            <div class="challenge-content">
+                
+                    <i>What is the problem to solve?</i
+                        <br><br>
+                    [DESCRIBE BUSINESS / PEOPLE / PROCESS CHALLENGE.]
+               
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         AH APPROACH
+         ========================================= -->
+
+    <section class="ah-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AH™ Approach
+            </h2>
+
+            <p class="section-intro">
+                <i>What is the approach?</i
+                        <br><br>[BRIEF STATEMENT EXPLAINING HOW AH FRAMEWORK IS APPLIED.]
+            </p>
+
+
+            <div class="ah-grid">
+
+
+                <!-- A -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        A
+                    </div>
+
+                    <div class="ah-title">
+                        AI and Automation
+                    </div>
+
+                    <div class="ah-description">
+                        [A STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- B -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        B
+                    </div>
+
+                    <div class="ah-title">
+                        Business Transformation
+                    </div>
+
+                    <div class="ah-description">
+                        [B STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- C -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        C
+                    </div>
+
+                    <div class="ah-title">
+                        Change Management
+                    </div>
+
+                    <div class="ah-description">
+                        [C STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- D -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        D
+                    </div>
+
+                    <div class="ah-title">
+                        Digital Solutions
+                    </div>
+
+                    <div class="ah-description">
+                        [D STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- E -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        E
+                    </div>
+
+                    <div class="ah-title">
+                        Evaluation and Analytics
+                    </div>
+
+                    <div class="ah-description">
+                        [E STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- F -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        F
+                    </div>
+
+                    <div class="ah-title">
+                        Facilitation and Feedback
+                    </div>
+
+                    <div class="ah-description">
+                        [F STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- G -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        G
+                    </div>
+
+                    <div class="ah-title">
+                        Governance
+                    </div>
+
+                    <div class="ah-description">
+                        [G STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+                <!-- H -->
+
+                <div class="ah-card">
+
+                    <div class="ah-letter">
+                        H
+                    </div>
+
+                    <div class="ah-title">
+                        Human Judgment
+                    </div>
+
+                    <div class="ah-description">
+                        [H STATEMENT SPECIFIC TO THIS USE CASE]
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- =========================================
+         DELIVERABLES
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                Deliverables
+            </h2>
+
+            <p>
+                <i>What products were produced</i>
+                        <br>[DESCRIBE  DELIVERABLES PRODUCED FOR THIS USE CASE. THAT IS, WHAT WAS CREATED?]
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         AI-ENABLED OPPORTUNITIES
+         ========================================= -->
+
+    <section class="ai-section">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                AI-Enabled Opportunities
+            </h2>
+
+            <p class="section-intro">
+                <i>Where could AI add value?</i>
+                        <br>• 
+                        <br>
+            </p>
+
+
+           
+
+        </div>
+
+    </section>
+
+    <!-- =========================================
+         MEASUREMENT
+         ========================================= -->
+
+    <section class="measurement">
+
+        <div class="container">
+
+            <h2 class="section-title">
+                Measurement &amp; Analytics
+            </h2>
+
+
+                <p>
+                    <i>How was success and performance measured?</i>
+                        <br>[EXPLAIN WHAT SUCCESS LOOKS LIKE - POWER BI.]
+                </p><br>
+
+            <div class="measurement-box">
+
+
+
+
+                <div class="metrics">
+
+
+                    <div class="metric">
+
+                        <div class="metric-number">
+                            [METRIC]
+                        </div>
+
+                        <div class="metric-label">
+                            [METRIC LABEL]
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-number">
+                            [METRIC]
+                        </div>
+
+                        <div class="metric-label">
+                            [METRIC LABEL]
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-number">
+                            [METRIC]
+                        </div>
+
+                        <div class="metric-label">
+                            [METRIC LABEL]
+                        </div>
+
+                    </div>
+
+
+                    <div class="metric">
+
+                        <div class="metric-number">
+                            [METRIC]
+                        </div>
+
+                        <div class="metric-label">
+                            [METRIC LABEL]
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         OUTCOME
+         ========================================= -->
+
+    <section class="outcome">
+
+        <div class="container">
+
+            <h2>
+                The Outcome
+            </h2>
+
+            <p>
+                <i>What was accomplished?</i>
+                        <br>[DESCRIBE DESIRED BUSINESS, PEOPLE, PROCESS, LEARNING, OR CUSTOMER OUTCOME. WHAT ARE THE CHANGES?]
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Ingrid Richrath
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
